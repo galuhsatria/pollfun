@@ -7,10 +7,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from './button';
 import { LogOut } from 'lucide-react';
+import { LoaderCircle } from 'lucide-react';
 
 export default function Navbar() {
   const router = useRouter();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   console.log(session);
 
   return (
@@ -22,7 +23,11 @@ export default function Navbar() {
           </Link>
         </div>
         <div>
-          {!session ? (
+          {status == 'loading' ? (
+            <div className="py-2 w-20 flex items-center justify-center">
+              <LoaderCircle className="animate-spin text-zinc-400" />
+            </div>
+          ) : !session ? (
             <Button className="rounded-full border-black px-4" variant={'outline'} size={'sm'} onClick={() => router.push('/auth/login')}>
               Sign In
             </Button>

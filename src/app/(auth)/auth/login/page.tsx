@@ -1,13 +1,12 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { useSession } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
 
 export default function Page() {
-  const { data: session } = useSession();
+  const { data: session} = useSession();
   const router = useRouter();
 
   if (session) {

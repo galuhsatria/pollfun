@@ -4,7 +4,7 @@ import { Rocket } from 'lucide-react';
 
 export default function Page() {
   return (
-    <main className="layout">
+    <main className="layout min-h-[81vh]">
       <div className="flex items-center flex-col py-28">
         <div className="text-center">
           <h1 className="logo text-7xl font-bold text-black">PollFun</h1>

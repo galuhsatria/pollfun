@@ -1,3 +1,4 @@
+import Footer from '@/components/ui/footer';
 import Navbar from '@/components/ui/navbar';
 import type { Metadata } from 'next';
 
@@ -12,9 +13,10 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <section>
+    <section className='min-h-screen'>
       <Navbar />
       {children}
+      <Footer/>
     </section>
   );
 }
