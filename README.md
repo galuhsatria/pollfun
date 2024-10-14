@@ -3,3 +3,4 @@ Tech Stack:
 2. Tailwind CSS
 3. Next Auth
 4. Shadcn UI
+5. Supabase
